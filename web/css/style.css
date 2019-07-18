@@ -1,0 +1,442 @@
+/* Fonts */
+@font-face {
+    font-family: "DaxBold";
+    src: url('../fonts/dax-bold.ttf');
+}
+@font-face {
+    font-family: "Daxlight";
+    src: url('../fonts/dax-light.ttf');
+}
+@font-face {
+    font-family: "DaxRegular";
+    src: url('../fonts/dax-regular.ttf');
+}
+@font-face {
+    font-family: "DaxMedium";
+    src: url('../fonts/dax-medium.ttf');
+}
+
+body{
+    font-family: 'Daxlight';
+}
+.btn, input[type=text], input[type=password], .navbar{
+    border-radius: 0;
+}
+
+.img-etudiant, #image_preview1 img{
+    width: 150px;
+    height: 150px;
+}
+
+.espace{
+    margin-top: 10px;
+}
+
+.ligne1{
+    background-color: #303030;
+}
+
+.ligne2 img{
+    height: 75px;
+    margin: 1%;
+}
+
+.col1{
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: "Daxlight";
+    font-size: 9px;
+}
+
+.bienvenu{
+    color: #7F7F7F;
+    font-weight: bold;
+    font-family: "Daxlight";
+    font-size: 11px;
+}
+
+.user{
+    font-weight: bold;
+    font-family: "DaxRegular";
+    font-size: 13px;
+    color: #000000;
+}
+
+.col2{
+    color: #D0D2D2;
+    font-weight: bold;
+    font-family: "Daxlight";
+    font-size: 11px;
+}
+
+.img-user img{
+    width: 50px;
+    height: 50px;
+}
+
+.guide{
+    margin-top: 1.9%;
+    color: #0054B1;
+}
+
+.profile{
+    margin-top: 1.4%;
+}
+
+.guide a{
+    color: #0054B1;
+    font-family: "Daxlight";
+    font-size: 11px;
+}
+
+.guide a:hover{
+    color: #0054B1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer{
+    padding-top: 2.5%;
+    padding-bottom: 3.6%;
+    /*background-color: #D0D2D3;*/
+}
+
+.modal-header{
+    box-shadow: 1px 1px 12px #555;
+}
+
+.menu{
+    width: 21%;
+}
+
+.menu .image{
+    background-color: #F0F1F1;
+    border-radius: 5px 5px 0 0;
+}
+
+.image img{
+    width: 60%;
+    height: 60%;
+}
+
+.menu .texte{
+    background-color: #D1D2D3;
+    border-radius: 0 0 5px 5px;
+    padding: 2%;
+    height: 100%;
+}
+
+.menu a{
+    color: #303030;
+    font-weight: normal;
+    font-family: "Daxlight";
+}
+
+.menu a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+.accueil .menu{
+    margin: 2%;
+}
+
+table .menu img{
+    width: 45px;
+    margin-left: 2%;
+    margin-bottom: 1%;
+}
+
+table .menu td, .dash td{
+    background-color: #F0F1F1;
+    font-weight: normal;
+    font-family: "Daxlight";
+    font-size: 12px;
+    padding-top: 3%;
+    width: 1000px;
+}
+
+.ligne{
+    background-color: #F0F1F1;
+}
+
+.panel-default a{
+    font-weight: normal;
+}
+
+.panel-title{
+    color: #FFFFFF;
+}
+
+.panel-default a:hover{
+    text-decoration: none;
+}
+
+table .menu .orange, .orange .panel-heading{
+    background-color: #CC6915;
+    border-radius: 0;
+    border-bottom: 1px solid #FFFFFF;
+    border-radius: 0;
+}
+
+table .menu .bleue, .bleue .panel-heading{
+    background-color: #0065A6;
+    border-bottom: 1px solid #FFFFFF;
+    border-radius: 0;
+}
+
+table .menu .verte, .verte .panel-heading{
+    background-color: #0A7842;
+    border-bottom: 1px solid #FFFFFF;
+    border-radius: 0;
+}
+
+table .menu .defaut, .defaut .panel-heading{
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd
+}
+
+.defaut .panel-heading .panel-title{
+    color: #333;
+}
+
+.panel-group .panel{
+    border: 0;
+}
+
+table .menu .dashboard, .dashboard .dash, .vertical-menu a.active{
+    background-color: #6D6E70;
+    border: 0;
+    border-radius: 0;
+    color: #FFFFFF;
+}
+
+
+table .menu td a{
+    color: #FFFFFF;
+    font-weight: normal;
+    font-family: 'Daxlight';
+    font-size: 12px;
+    padding-top: 3%;
+}
+
+table .menu td a:hover{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.loading-div, .loading-div4{
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #EBF8A4;
+    border: 1px solid #A2D246;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.loading-div1{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #EBF8A4;
+    border: 1px solid #A2D246;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.contenu{
+    margin-top: 2%;
+}
+
+.thumbnail img{
+    width: 55px;
+    height: 55px;
+}
+
+.recherche input, .recherche select, .rechercheBourse input, .rechercheBourse select{
+    height: 25px;
+    font-size: 9px;
+    color: #000000;
+    font-family: "Daxlight";
+    font-weight: normal;
+}
+
+.img-aide{
+    max-height: 20px;
+    /*width: 20px;*/
+}
+
+.menu .menu-actif{
+    background-color: #D0D2D3;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+.footer {
+    //position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #333333;
+    padding: 1%;
+}
+
+.container .text-muted {
+    margin: 20px 0;
+}
+
+/*.container {
+        min-width: 560px;
+}*/
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+code {
+    font-size: 80%;
+}
+
+.footer{
+    color: #FFF;
+    font-size: 12px;
+    font-family: 'Daxlight';
+}
+
+.ajout{
+    margin: auto;
+    margin-left: 0;
+    opacity: 0.9;
+    z-index: 1;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    width : 60px;
+    height: 60px;
+    background-color: #047832;
+    border-radius: 30px;
+    right: 8%;
+    bottom: 10%;
+    background-image: url('../images/plus.png');
+    z-index: 999;
+}
+
+.ajout-text{
+    position: fixed;
+    right: 10%;
+    bottom: 17%;
+    border-radius: 2px;
+    padding: 7px;
+    font-size: 9px;
+    height: 25px;
+    width: 100px;
+    display: none;
+    z-index: 999;
+}
+
+.ajout:hover{
+    opacity: 1;
+    background-image: url('../images/user_add.png');
+}
+
+#heading11, #heading21, #heading31, #heading41{
+    background-color: #A3A6AA;
+    border-color: #ddd;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .texte {
+        display: none;
+    }
+}
+
+.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.bloc-buttons{
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#modal-content-document{
+    width: 800px; 
+    height: auto;
+}
+
+#modal-content-document img{
+    width: 100%; 
+    height: 100%;
+}
+
+.img-quittance{
+    width: 100%; 
+    height: 50%;
+}
+
+.select-filtre{
+    width: 15% !important; 
+}
+
+.badge-c{
+    font-size: 13px;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+h4.title{
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000000;
+}
+
+.btn-group a{
+    color: #FFFFFF;
+}
+
+.btn-group a:hover{
+    color: #FFFFFF;
+}
+
+.table-responsive{
+    margin-top: 10px;
+}
+
+ul.nav-tabs li a{
+    text-transform: uppercase;
+    color: #0A7842;
+    font-weight: bold;
+}
+
+ul.nav-tabs li.active a{
+    background-color: #0A7842;
+    color: #FFFFFF;
+}
+
+.tab-content{
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: 0px;
+    border-radius: 0 0 4px 4px;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.05)
+}
