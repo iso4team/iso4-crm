@@ -9,7 +9,7 @@ if (($_SERVER['SERVER_ADDR'] == 'localhost') || ($_SERVER['SERVER_ADDR'] == '127
 } else {
     require_once 'params.php';
     define('APP_NAME', '/iso4-crm');
-    define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/iso4-crm');
+    define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/iso4-crm/');
 }
 
 define('LIB_DIR', ROOT . 'libs/');
