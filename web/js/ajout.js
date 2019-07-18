@@ -8,7 +8,7 @@ $(document).ready(function (e) {
     if ((hostname !== 'localhost') && (hostname !== '12.0.0.1')) {
         baseUrl = location.protocol + "//" + hostname + "/";
     } else {
-        baseUrl = location.protocol + "//" + hostname + "/cursus/";
+        baseUrl = location.protocol + "//" + hostname + "/iso4-crm/";
     }
     console.log("baseUrl [" + baseUrl + "]");
 

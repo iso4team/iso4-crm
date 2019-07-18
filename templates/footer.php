@@ -7,17 +7,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <!-- <hr /> -->
-                &copy; <a href="http://disi.uvs.sn" target="blanc"> UVS </a> - <?= date('Y'); ?> - Tous droits réservés
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                Ministère de l'Enseignement Supérieur, de la Recherche et de l'Innovation (<a href="http://mesr.gouv.sn" target="blanc">MESRI</a>)
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                Université Virtuelle du Sénégal (<a href="http://www.uvs.sn" target="blanc">UVS</a>)
+                &copy; <a href="http://www.iso4digit.com" target="blanc"> ISO4DIGIT </a> - <?= date('Y'); ?> - Tous droits réservés
             </div>
         </div>
     </div>
@@ -36,9 +26,6 @@
 
 <script type="text/javascript" src="<?= JS_DIR; ?>scripts.js"></script>
 <script type="text/javascript" src="<?= JS_DIR; ?>ajout.js"></script>
-
-<script type="text/javascript" src="<?= JS_DIR; ?>paie/liste.js"></script>
-<script type="text/javascript" src="<?= JS_DIR; ?>tuto/liste.js"></script>
 
 </body>
 </html>

@@ -10,14 +10,14 @@
         <div class="container">
             <div class="row ligne2">
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a class="logo" href="<?= Tools::generateURL(APP_NAME); ?>"><img src="<?= IMG_DIR; ?>"></a>
+                    <a class="logo" href="<?= Tools::generateURL(APP_NAME); ?>"><img src="<?= IMG_DIR.'/cnx.png'; ?>"></a>
+                    <strong>ISO4CRM</strong>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12 guide">
-                    <a href="#" data-toggle="modal" data-target="#guide" title="Guide d'utilisation de la plateforme"><span class="glyphicon glyphicon-alert"></span> Guide d’utilisation </a> | <a href="#" data-toggle="modal" data-target="#aide" title="Besoin d'aide"> Besoin d’aide? </a>
                 </div>
                 <div class="col-md-offset-1 col-md-3 col-sm-6 col-xs-12 profile">
                     <?php if (empty($_SESSION['phpCAS'])) { ?>
-                        <a class="navbar-brand" href="index.php?p=projet">
+                        <a class="navbar-brand" href="<?= Tools::generateURL(""); ?>">
                             <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
                             Connexion
                         </a>

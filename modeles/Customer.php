@@ -11,9 +11,9 @@
  *
  * @author <ahmet.thiam@uvs.edu.sn>
  */
-class Types extends Model {
+class Customer extends Model {
 
-    var $table = '';
+    var $table = 'crm_customer';
     var $db;
 
     public function __construct() {

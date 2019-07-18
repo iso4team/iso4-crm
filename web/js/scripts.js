@@ -1,8 +1,34 @@
 $(document).ready(function (e) {
     e.preventDefault;
 
-    $('.select-search').selectpicker({"liveSearch": true});
-
+    //$('.select-search').selectpicker({"liveSearch": true});
+    
+    var location = window.location;
+    var hostname = location.hostname;
+    console.log(hostname);
+    var baseUrl = "";
+    if ((hostname !== 'localhost') && (hostname !== '12.0.0.1')) {
+        baseUrl = location.protocol + "//" + hostname + "/";
+    } else {
+        baseUrl = location.protocol + "//" + hostname + "/iso4-crm/";
+    }
+    console.log("baseUrl [" + baseUrl + "]");
+    
+    $(".datatable").DataTable({
+        "ajax": {
+            "url": baseUrl + $(this).data("url"),
+            "cache": true
+        },
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
+    }).columns().every(function () {
+        var b = this;
+        $("input", this.header()).on("keyup change", function () {
+            b.search() !== this.value && b.search(this.value).draw();
+        });
+    });
+    
 });
 
 $.extend({

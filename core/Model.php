@@ -2,9 +2,9 @@
 
 class Model {
 
-    public function __construct($base) {
+    public function __construct($base = null) {
         try {
-            $this->db = Connect::getInstance($base);
+            $this->db = Connect::getInstance("iso4_crm_db");
         } catch (Exception $ex) {
             error_log($ex->getMessage());
         }

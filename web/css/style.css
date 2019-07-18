@@ -165,7 +165,10 @@ table .menu td, .dash td{
 }
 
 .panel-title{
-    color: #FFFFFF;
+}
+
+div.clearfix > h4.panel-title {
+    padding-top: 7.5px;
 }
 
 .panel-default a:hover{
@@ -214,10 +217,9 @@ table .menu .dashboard, .dashboard .dash, .vertical-menu a.active{
 
 
 table .menu td a{
-    color: #FFFFFF;
     font-weight: normal;
     font-family: 'Daxlight';
-    font-size: 12px;
+    font-size: 14px;
     padding-top: 3%;
 }
 
@@ -280,10 +282,10 @@ html {
 
 
 .footer {
-    //position: absolute;
+    position: absolute;
     bottom: 0;
     width: 100%;
-    height: 90px;
+    height: 50px;
     background-color: #333333;
     padding: 1%;
 }

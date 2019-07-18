@@ -1,12 +1,22 @@
 <table class="table table-hover">
     <tr class="menu">
-        <td class="parametrage <?= (isset($module) && ($module == 'paiement')) ? "menu-actif" : ""; ?>">
-            <a href="<?= Tools::generateURL("paiement"); ?>"><img src="<?= IMG_DIR; ?>/user.png">  PAIEMENT</a>
+        <td class="<?= (isset($module) && ($module == 'products')) ? "menu-actif" : ""; ?>">
+            <a href="<?= Tools::generateURL("products"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  PRODUCTS</a>
         </td>
     </tr>
     <tr class="menu">
-        <td class="projet <?= (isset($module) && ($module == 'user')) ? "menu-actif" : ""; ?>">
-            <a href="<?= Tools::generateURL("users"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  UTILISATEUR</a>
+        <td class="projet <?= (isset($module) && ($module == 'customers')) ? "menu-actif" : ""; ?>">
+            <a href="<?= Tools::generateURL("customers"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  CUSTOMERS</a>
+        </td>
+    </tr>
+    <tr class="menu">
+        <td class="<?= (isset($module) && ($module == 'suppliers')) ? "menu-actif" : ""; ?>">
+            <a href="<?= Tools::generateURL("suppliers"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  SUPPLIERS</a>
+        </td>
+    </tr>
+    <tr class="menu">
+        <td class="<?= (isset($module) && ($module == 'orders')) ? "menu-actif" : ""; ?>">
+            <a href="<?= Tools::generateURL("orders"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  ORDERS</a>
         </td>
     </tr>
 </table>
