@@ -8,7 +8,7 @@ $(document).ready(function (e) {
     console.log(hostname);
     var baseUrl = "";
     if ((hostname !== 'localhost') && (hostname !== '12.0.0.1')) {
-        baseUrl = location.protocol + "//" + hostname + "/";
+        baseUrl = location.protocol + "//" + hostname + "/iso4-crm/";
     } else {
         baseUrl = location.protocol + "//" + hostname + "/iso4-crm/";
     }
@@ -16,7 +16,7 @@ $(document).ready(function (e) {
     
     $(".datatable").DataTable({
         "ajax": {
-            "url": baseUrl + $(this).data("url"),
+            "url": baseUrl + $(this).attr("data-url"),
             "cache": true
         },
         "language": {
