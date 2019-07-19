@@ -16,7 +16,7 @@ $(document).ready(function (e) {
     
     $(".datatable").DataTable({
         "ajax": {
-            "url": baseUrl + $(this).attr("data-url"),
+            "url": baseUrl + $(".datatable").attr("data-url"),
             "cache": true
         },
         "language": {
