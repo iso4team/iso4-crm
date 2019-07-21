@@ -1,4 +1,6 @@
+configs/config.php
+configs/params.php
 cache/*
 web/upload/*
-nbproject
+nbproject/
 /logs/
