@@ -23,6 +23,14 @@
                     <tbody>
 
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

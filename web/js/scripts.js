@@ -14,11 +14,15 @@ $(document).ready(function (e) {
     }
     console.log("baseUrl [" + baseUrl + "]");
     
+    $('.datatable tfoot th').each( function () {//  ajout filtres recherches par colonne
+          var title = $(this).text();
+          $(this).html( '<input type="text" placeholder=" '+title+'" />' );
+      } );
     $(".datatable").DataTable({
-        "ajax": {
+        /*"ajax": {
             "url": baseUrl + $(this).attr("data-url"),
             "cache": true
-        },
+        },*/
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
         }

@@ -14,15 +14,55 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Price</th>
                             <th>Category</th>
-                            <th>Stock</th>
+                            <th>Contact</th>
+                            <th>Etat</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr>
+                            <td>GIE mango</td>
+                            <td>Fruit</td>
+                            <td>(+221)7701010</td>
+                            <td>Qualité</td>
+                            <td>
+                                   <i class="glyphicon glyphicon-eye-open"></i>
+                                 | <i class="glyphicon glyphicon-pencil"></i>
+                                 | <i class="glyphicon glyphicon-trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GIE Orange</td>
+                            <td>Fruit</td>
+                            <td>(+221)7701011</td>
+                            <td>prospect</td>
+                            <td>
+                                   <i class="glyphicon glyphicon-eye-open"></i>
+                                 | <i class="glyphicon glyphicon-pencil"></i>
+                                 | <i class="glyphicon glyphicon-trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GIE Totame</td>
+                            <td>Légume</td>
+                            <td>(+221)7701012</td>
+                            <td>Abandonné</td>
+                            <td>
+                                   <i class="glyphicon glyphicon-eye-open"></i>
+                                 | <i class="glyphicon glyphicon-pencil"></i>
+                                 | <i class="glyphicon glyphicon-trash"></i>
+                                 
+                            </td>
+                        </tr>
                     </tbody>
+                    <tfoot>
+                        <tr><th>Name</th>
+                            <th>Category</th>
+                            <th>Contact</th>
+                            <th>Etat</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
