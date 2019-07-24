@@ -19,7 +19,7 @@
                     <?php if (empty($_SESSION['phpCAS'])) { ?>
                         <a class="navbar-brand" href="<?= Tools::generateURL(""); ?>">
                             <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-                            Connexion
+                            Logout
                         </a>
                     <?php } else { ?>
                         <div class="row">

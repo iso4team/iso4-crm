@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <!-- <hr /> -->
-                &copy; <a href="http://www.iso4digit.com" target="blanc"> ISO4DIGIT </a> - <?= date('Y'); ?> - Tous droits réservés
+                &copy; <a href="http://www.iso4digit.com" target="blanc"> ISO4DIGIT </a> - <?= date('Y'); ?> - All rights reserved
             </div>
         </div>
     </div>

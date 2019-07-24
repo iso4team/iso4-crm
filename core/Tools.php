@@ -40,7 +40,7 @@ class Tools {
         }
         // Check if $uploadOk is set to 0 by an error
         if (move_uploaded_file($_FILES[$name]["tmp_name"], $target_file)) {
-            return "0;" . $target_file;
+            return "0;" . $file_name . "_" . basename($_FILES[$name]["name"]);
         } else {
             return "1;Désolé. Erreur lors du chargement.";
         }

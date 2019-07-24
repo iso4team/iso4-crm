@@ -1,22 +1,27 @@
 <table class="table table-hover">
     <tr class="menu">
         <td class="<?= (isset($module) && ($module == 'products')) ? "menu-actif" : ""; ?>">
-            <a href="<?= Tools::generateURL("products"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  PRODUCTS</a>
+            <a href="<?= Tools::generateURL("products"); ?>"><i class="fa fa-2x fa-product-hunt"></i>  PRODUCTS</a>
         </td>
     </tr>
     <tr class="menu">
         <td class="projet <?= (isset($module) && ($module == 'customers')) ? "menu-actif" : ""; ?>">
-            <a href="<?= Tools::generateURL("customers"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  CUSTOMERS</a>
+            <a href="<?= Tools::generateURL("customers"); ?>"><i class="fa fa-2x fa-users"></i>  CUSTOMERS</a>
         </td>
     </tr>
     <tr class="menu">
         <td class="<?= (isset($module) && ($module == 'suppliers')) ? "menu-actif" : ""; ?>">
-            <a href="<?= Tools::generateURL("suppliers"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  SUPPLIERS</a>
+            <a href="<?= Tools::generateURL("suppliers"); ?>"><i class="fa fa-2x fa-chain"></i>  SUPPLIERS</a>
         </td>
     </tr>
     <tr class="menu">
         <td class="<?= (isset($module) && ($module == 'orders')) ? "menu-actif" : ""; ?>">
-            <a href="<?= Tools::generateURL("orders"); ?>"><img src="<?= IMG_DIR; ?>/cnx.png">  ORDERS</a>
+            <a href="<?= Tools::generateURL("orders"); ?>"><i class="fa fa-2x fa-print"></i>  ORDERS</a>
+        </td>
+    </tr>
+    <tr class="menu">
+        <td class="<?= (isset($module) && ($module == 'orders')) ? "menu-actif" : ""; ?>">
+            <a href="<?= Tools::generateURL("deliveries"); ?>"><i class="fa fa-2x fa-print"></i>  DELIVERIES</a>
         </td>
     </tr>
 </table>

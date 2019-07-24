@@ -10,20 +10,50 @@
         </div>
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
-                <table class="table datatable" data-url="products/list">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Category</th>
-                            <th>Stock</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
+                <div class="row">
+                    <div class="col-lg-12 table-responsive">
+                        <table class="table table-hover datatable" data-url="products/list">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                    <th>Stock</th>
+                                    <th>Store</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($products as $value) {
+                                    ?>
+                                    <tr>
+                                        <td><?= $value['prd_name'];?></td>
+                                        <td><?= $value['prd_price'];?> $</td>
+                                        <td><?= $value['category'];?></td>
+                                        <td>10</td>
+                                        <td><?= (isset($value['store'])) ? $value['store'] : "N/A";?></td>
+                                        <td>
+                                            <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>                                
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                    <th>Stock</th>
+                                    <th>Store</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

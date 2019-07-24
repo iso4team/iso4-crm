@@ -13,6 +13,7 @@
  */
 class Product extends Model {
 
+    var $prefix = 'prd';
     var $table = 'crm_product';
     var $db;
 
@@ -20,5 +21,12 @@ class Product extends Model {
         parent::__construct();
     }
 
-    
+    public function findAll() {
+        $sql = "SELECT p.*, c.ca_libelle category, s.str_code store "
+                . "FROM crm_product p "
+                . "JOIN crm_category c ON c.id = prd_category "
+                . "LEFT JOIN crm_store s ON s.id = prd_fk_store_id";
+        return $this->executerReq($sql);
+    }
+
 }

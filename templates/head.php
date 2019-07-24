@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title> UVS | CURSUS</title>
+        <title> ICRM | ISO4DIGIT</title>
         <meta charset = "utf-8" />
         <link rel="stylesheet" type="text/css" href="<?= CSS_DIR; ?>bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="<?= CSS_DIR; ?>datatables/datatables.min.css"/>

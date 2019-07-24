@@ -5,25 +5,69 @@
                 <span class="fa fa-laptop"></span>&nbsp;ORDERS
             </h4>
             <div class="btn-group pull-right">
-                <a class="btn btn-sm btn-success" href="#"  data-toggle="modal" data-target="#add-product"><span class="glyphicon glyphicon-plus"></span> New product</a>
+                <a class="btn btn-sm btn-success" href="#"  data-toggle="modal" data-target="#add-product"><span class="glyphicon glyphicon-plus"></span> New order</a>
             </div>
         </div>
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
-                <table class="table datatable" data-url="products/list">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Category</th>
-                            <th>Stock</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
+                <div class="row">
+                    <div class="col-lg-12 table-responsive">
+                        <table class="table datatable" data-url="products/list">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Code</td>
+                                    <td>Product</td>
+                                    <td>Amount</td>
+                                    <td>Date</td>
+                                    <td>Status</td>
+                                    <td>
+                                        <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Code</td>
+                                    <td>Product</td>
+                                    <td>Amount</td>
+                                    <td>Date</td>
+                                    <td>Status</td>
+                                    <td>
+                                        <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Code</td>
+                                    <td>Product</td>
+                                    <td>Amount</td>
+                                    <td>Date</td>
+                                    <td>Status</td>
+                                    <td>
+                                        <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

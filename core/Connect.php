@@ -4,10 +4,8 @@ class Connect extends PDO {
 
     private static $_instance_C;
 
-    public static function getInstance($base) {
-        if ($base == 'icrm_db') {
-            return self::getInstanceC();
-        }
+    public static function getInstance($base = NULL) {
+        return self::getInstanceC();
     }
 
     public static function getInstanceC() {

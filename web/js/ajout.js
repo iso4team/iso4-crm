@@ -13,7 +13,7 @@ $(document).ready(function (e) {
     console.log("baseUrl [" + baseUrl + "]");
 
     // - Ajout
-    $("form.add").on("submit", function (e) {
+    $("form.form-add").on("submit", function (e) {
         e.preventDefault();
 
         if (confirm("Voulez-vous confirmer l'ajout ?")) {
