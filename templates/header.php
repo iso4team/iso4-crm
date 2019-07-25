@@ -56,7 +56,7 @@
         <!--div id="dialog" style="display: none"></div-->
         
         <div class="row">
-            <div class="col-md-3">
-                <?php include_once 'sidebare.php'; ?>
+            <div class="col-md-12">
+                <?php include_once 'navbar.php'; ?>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
