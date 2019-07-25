@@ -23,9 +23,6 @@
                         </a>
                     <?php } else { ?>
                         <div class="row">
-                            <div class="col-md-3 img-user">
-                                <img src="<?= IMG_DIR; ?>cnx.png" class="img-circle">
-                            </div>
                             <div class="col-md-9">
                                 <div class="bienvenu">Bienvenue</div>  
                                 <div class="user"><?php
@@ -34,6 +31,9 @@
                                     }
                                     ?></div> 
                                 <a href="<?= Tools::generateURL("logout"); ?>">Déconnexion</a> 
+                            </div>
+                            <div class="col-md-3 img-user">
+                                <img src="<?= IMG_DIR; ?>cnx.png" class="img-circle">
                             </div>
                         </div>
                     <?php } ?>

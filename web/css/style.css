@@ -81,6 +81,7 @@ body{
 
 .profile{
     margin-top: 1.4%;
+    text-align: right;
 }
 
 .guide a{
@@ -249,9 +250,11 @@ table .menu td a:hover{
 }
 
 .contenu{
-    margin-top: 2%;
+    margin-top: 1%;
 }
-
+.navbar{
+    margin-bottom: 10px;
+}
 .thumbnail img{
     width: 55px;
     height: 55px;
