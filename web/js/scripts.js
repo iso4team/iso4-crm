@@ -1,7 +1,7 @@
 $(document).ready(function (e) {
     e.preventDefault;
 
-    //$('.select-search').selectpicker({"liveSearch": true});
+    $('.select-search').selectpicker({"liveSearch": true});
     
     var location = window.location;
     var hostname = location.hostname;

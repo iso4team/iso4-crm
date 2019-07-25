@@ -20,5 +20,8 @@ class Order extends Model {
         parent::__construct();
     }
 
-    
+
+    public function findAll() {
+        $sql = "SELECT p.prd_name, ";
+    }
 }

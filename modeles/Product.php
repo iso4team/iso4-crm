@@ -24,7 +24,7 @@ class Product extends Model {
     public function findAll() {
         $sql = "SELECT p.*, c.ca_libelle category, s.str_code store "
                 . "FROM crm_product p "
-                . "JOIN crm_category c ON c.id = prd_category "
+                . "JOIN crm_category_product c ON c.id = prd_category "
                 . "LEFT JOIN crm_store s ON s.id = prd_fk_store_id";
         return $this->executerReq($sql);
     }

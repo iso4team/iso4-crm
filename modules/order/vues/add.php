@@ -15,6 +15,13 @@
                                 <div class="col-md-8">
                                     <select class="form-control" name="supplier" required>
                                         <option value="">Choose a supplier</option>
+                                        <?php
+                                        foreach ($suppliers as $value) {
+                                            ?>
+                                            <option value="<?= $value['id']; ?>"><?= $value['usr_first_name'].' '.$value['usr_last_name']; ?></option>
+                                            <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -23,6 +30,13 @@
                                 <div class="col-md-8">
                                     <select class="form-control" name="product" required>
                                         <option value="">Choose a product</option>
+                                        <?php
+                                        foreach ($products as $value) {
+                                            ?>
+                                            <option value="<?= $value['id']; ?>"><?= $value['prd_name']; ?></option>
+                                            <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>

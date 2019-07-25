@@ -7,7 +7,7 @@ class ControleurProduct {
 
     public function __construct() {
         $this->m_product = new Product();
-        $this->m_category = new Category();
+        $this->m_category = new ProductCategory();
     }
 
     public function actionIndex() {

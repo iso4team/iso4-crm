@@ -9,7 +9,12 @@ $router->map('GET', '/products', array('c' => 'ControleurProduct', 'a' => 'actio
 $router->map('GET|POST', '/products/add', array('c' => 'ControleurProduct', 'a' => 'actionAddProduct'), 'product_add');
 
 $router->map('GET', '/customers', array('c' => 'ControleurCustomer', 'a' => 'actionIndex'), 'customer_index');
+$router->map('GET|POST', '/customers/add', array('c' => 'ControleurCustomer', 'a' => 'actionAddCustomer'), 'customer_add');
+
 
 $router->map('GET', '/suppliers', array('c' => 'ControleurSupplier', 'a' => 'actionIndex'), 'supplier_index');
+$router->map('GET|POST', '/suppliers/add', array('c' => 'ControleurSupplier', 'a' => 'actionAddSupplier'), 'supplier_add');
+
 
 $router->map('GET', '/orders', array('c' => 'ControleurOrder', 'a' => 'actionIndex'), 'order_index');
+$router->map('GET|POST', '/orders/add', array('c' => 'ControleurOrder', 'a' => 'actionAddOrder'), 'order_add');

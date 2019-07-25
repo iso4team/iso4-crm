@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="country"> Country </label>
-                                    <select class="form-control" name="country">
+                                    <select class="form-control select-search" name="country">
                                         <option value="">Choose a country</option>
                                         <?php
                                         foreach ($countries as $value) {
@@ -50,7 +50,20 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <label for="category"> Category </label>
+                                    <select class="form-control select-search" name="category">
+                                        <option value="">Choose a category</option>
+                                        <?php
+                                        foreach ($categories as $value) {
+                                            ?>
+                                            <option value="<?= $value['id']; ?>"><?= $value['ca_libelle']; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
                                     <label for="address"> Address </label>
                                     <textarea name="address" id="address" class="form-control" rows="5" required></textarea>
                                 </div>

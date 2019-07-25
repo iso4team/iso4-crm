@@ -11,12 +11,14 @@
  *
  * @author <ahmet.thiam@uvs.edu.sn>
  */
-class Category extends Model {
+class User extends Model {
 
-    var $table = 'crm_category';
+    var $table = 'crm_user';
     var $db;
 
     public function __construct() {
         parent::__construct();
     }
+
+    
 }
