@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix" role="tab" id="headingOne">
             <h4 class="panel-title pull-left">
-                <span class="fa fa-user"></span>&nbsp;CUSTOMERS
+                <span class="fa fa-users"></span>&nbsp;CUSTOMERS
             </h4>
             <div class="btn-group pull-right">
                 <a class="btn btn-sm btn-success" href="#"  data-toggle="modal" data-target="#add-customer"><span class="glyphicon glyphicon-plus"></span> New customer</a>
