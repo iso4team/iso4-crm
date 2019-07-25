@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix" role="tab" id="headingOne">
             <h4 class="panel-title pull-left">
-                <span class="fa fa-laptop"></span>&nbsp;ORDERS
+                <span class="fa fa-print"></span>&nbsp;ORDERS
             </h4>
             <div class="btn-group pull-right">
                 <a class="btn btn-sm btn-success" href="#"  data-toggle="modal" data-target="#add-product"><span class="glyphicon glyphicon-plus"></span> New order</a>
