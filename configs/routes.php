@@ -18,3 +18,7 @@ $router->map('GET|POST', '/suppliers/add', array('c' => 'ControleurSupplier', 'a
 
 $router->map('GET', '/orders', array('c' => 'ControleurOrder', 'a' => 'actionIndex'), 'order_index');
 $router->map('GET|POST', '/orders/add', array('c' => 'ControleurOrder', 'a' => 'actionAddOrder'), 'order_add');
+
+
+$router->map('GET', '/deliveries', array('c' => 'ControleurDelivery', 'a' => 'actionIndex'), 'delivery_index');
+$router->map('GET|POST', '/deliveries/add', array('c' => 'ControleurDelivery', 'a' => 'actionAddDelivery'), 'delivery_add');

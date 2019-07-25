@@ -1,6 +1,6 @@
 <?php
 
-class ControleurOrder {
+class ControleurDelivery {
 
     protected $m_order;
     protected $m_order_product;
@@ -18,7 +18,7 @@ class ControleurOrder {
         $suppliers = $this->m_supplier->findAll();
         $products = $this->m_product->findAll();
         $orders = $this->m_order_product->findAll();
-        include 'list.php';
+        include_once 'list.php';
     }
 
     public function actionAddOrder() {

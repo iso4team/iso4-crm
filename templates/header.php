@@ -43,7 +43,7 @@
     </div>
     <div class="container contenu">
 
-        <div id="documentImgModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="documentImgModalLabel" aria-hidden="true">
+        <!--div id="documentImgModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="documentImgModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content" id="modal-content-document">
                     <div class="modal-body">
@@ -51,9 +51,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div-->
 
-        <div id="dialog" style="display: none"></div>
+        <!--div id="dialog" style="display: none"></div-->
         
         <div class="row">
             <div class="col-md-3">

@@ -2,17 +2,17 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix" role="tab" id="headingOne">
             <h4 class="panel-title pull-left">
-                <span class="fa fa-laptop"></span>&nbsp;ORDERS
+                <span class="fa fa-laptop"></span>&nbsp;DELIVERIES
             </h4>
             <div class="btn-group pull-right">
-                <a class="btn btn-sm btn-success" href="#"  data-toggle="modal" data-target="#add-product"><span class="glyphicon glyphicon-plus"></span> New order</a>
+                <a class="btn btn-sm btn-success" href="#"  data-toggle="modal" data-target="#add-product"><span class="glyphicon glyphicon-plus"></span> New delivery</a>
             </div>
         </div>
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12 table-responsive">
-                        <table class="table datatable" data-url="products/list">
+                        <table class="table datatable" data-url="deliveries/list">
                             <thead>
                                 <tr>
                                     <th>Code</th>
