@@ -142,6 +142,11 @@ body{
     margin: 2%;
 }
 
+
+table td{
+    font: 14px "Daxlight";
+}
+
 table .menu img{
     width: 45px;
     margin-left: 2%;
