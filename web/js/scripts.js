@@ -1,25 +1,8 @@
-function getXhr(){
-    var xhr = null;
-    if(window.XMLHttpRequest) // Firefox et autres
-        xhr = new XMLHttpRequest();
-    else if(window.ActiveXObject){ // Internet Explorer
-        try{
-            xhr = new ActiveXObject("Msxml2.XMLHTTP");
-        }catch (e) {
-            xhr = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-    }
-    else { // XMLHttpRequest non supporté par le navigateur
-        alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest...");
-        xhr = false;
-    }
-    return xhr;
-}
 $(document).ready(function (e) {
     e.preventDefault;
 
     $('.select-search').selectpicker({"liveSearch": true});
-    
+
     var location = window.location;
     var hostname = location.hostname;
     console.log(hostname);
@@ -30,26 +13,26 @@ $(document).ready(function (e) {
         baseUrl = location.protocol + "//" + hostname + "/iso4-crm/";
     }
     console.log("baseUrl [" + baseUrl + "]");
-    
-    $('.datatable tfoot th').each( function () {//  ajout filtres recherches par colonne
-          var title = $(this).text();
-          $(this).html( '<input type="text" placeholder=" '+title+'" />' );
-      } );
+
+    $('.datatable tfoot th').each(function () {//  ajout filtres recherches par colonne
+        var title = $(this).text();
+        $(this).html('<input type="text" placeholder=" ' + title + '" />');
+    });
     $(".datatable").DataTable({
         /*"ajax": {
-            "url": baseUrl + $(this).attr("data-url"),
-            "cache": true
-        },
-        "language": {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
-        }*/
+         "url": baseUrl + $(this).attr("data-url"),
+         "cache": true
+         },
+         "language": {
+         "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+         }*/
     }).columns().every(function () {
         var b = this;
         $("input", this.header()).on("keyup change", function () {
             b.search() !== this.value && b.search(this.value).draw();
         });
     });
-    
+
 });
 
 $.extend({
@@ -207,7 +190,7 @@ function centerModal() {
     $dialog.css("margin-top", 0);
     $dialog.css("margin-left", 300);
 }
-function deleteEntity(id,url,urlRedirect){
+function deleteEntity(id, url, urlRedirect) {
     bootbox.confirm({
         buttons: {
             confirm: {
@@ -220,9 +203,9 @@ function deleteEntity(id,url,urlRedirect){
                 className: 'cancel-button-class btn-danger '
             }
         },
-        message: 'Êtes-vous sûr de vouloir supprimer cet élément ?', callback: function(result) {
-            if(result){
-                onDelete(id,url,urlRedirect);
+        message: 'Êtes-vous sûr de vouloir supprimer cet élément ?', callback: function (result) {
+            if (result) {
+                onDelete(id, url, urlRedirect);
             }
         },
         title: "Confirmation de suppression"
@@ -230,25 +213,42 @@ function deleteEntity(id,url,urlRedirect){
 }
 
 
-function onRedirigeVers(urlRedirect){
-    document.location.href=urlRedirect;
+function onRedirigeVers(urlRedirect) {
+    document.location.href = urlRedirect;
 }
 
-function onDelete(id,urlAction,urlRedirect){
-    
+function onDelete(id, urlAction, urlRedirect) {
+
     $.ajax({
-            url: urlAction,
-            type: 'POST',
-            data: 'id='+ id,
-            success: function(data) {
-                console.log(data);
-                onRedirigeVers(urlRedirect);
-            },
-            error: function(resultat, statut, erreur) {
-                console.log(data);
-                return false;
-            }
+        url: urlAction,
+        type: 'POST',
+        data: 'id=' + id,
+        success: function (data) {
+            console.log(data);
+            onRedirigeVers(urlRedirect);
+        },
+        error: function (resultat, statut, erreur) {
+            console.log(data);
+            return false;
+        }
     });
+}
+
+function getXhr() {
+    var xhr = null;
+    if (window.XMLHttpRequest) // Firefox et autres
+        xhr = new XMLHttpRequest();
+    else if (window.ActiveXObject) { // Internet Explorer
+        try {
+            xhr = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    } else { // XMLHttpRequest non supporté par le navigateur
+        alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest...");
+        xhr = false;
+    }
+    return xhr;
 }
 
 

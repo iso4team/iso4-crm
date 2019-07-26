@@ -1,12 +1,12 @@
 $(document).ready(function (e) {
     e.preventDefault;
 
-    var location = window.location;
+     var location = window.location;
     var hostname = location.hostname;
     console.log(hostname);
     var baseUrl = "";
     if ((hostname !== 'localhost') && (hostname !== '12.0.0.1')) {
-        baseUrl = location.protocol + "//" + hostname + "/";
+        baseUrl = location.protocol + "//" + hostname + "/iso4-crm/";
     } else {
         baseUrl = location.protocol + "//" + hostname + "/iso4-crm/";
     }

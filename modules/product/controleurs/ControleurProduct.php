@@ -12,9 +12,9 @@ class ControleurProduct {
 
     public function actionIndex() {
         $categories = $this->m_category->recherche();
-        
+
         $products = $this->m_product->findAll();
-                
+
         include 'list.php';
     }
 
@@ -41,12 +41,13 @@ class ControleurProduct {
             echo "Oups! Error when added product.";
         }
     }
-    public function actionDeleteProduct(){
+
+    public function actionDeleteProduct() {
         $id = $_POST['id'];
-        if($this->m_product->supprimer($id)){
+        if ($this->m_product->supprimer($id)) {
             echo "Product delete successfully.";
         } else {
-            echo "Oups! Error when added product.";
+            echo "Oups! Error when deleted product.";
         }
     }
 
