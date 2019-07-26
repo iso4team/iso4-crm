@@ -34,7 +34,9 @@
                                         <td>10</td>
                                         <td><?= (isset($value['store'])) ? $value['store'] : "N/A";?></td>
                                         <td>
-                                            <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i>
+                                            <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp; 
+                                            <i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;
+                                            <a href="#"  onclick="deleteEntity(<?php echo $value['id']; ?>,'/iso4-crm/products/delete','/iso4-crm/products')"><i class="glyphicon glyphicon-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php

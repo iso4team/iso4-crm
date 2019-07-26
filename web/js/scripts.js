@@ -1,3 +1,20 @@
+function getXhr(){
+    var xhr = null;
+    if(window.XMLHttpRequest) // Firefox et autres
+        xhr = new XMLHttpRequest();
+    else if(window.ActiveXObject){ // Internet Explorer
+        try{
+            xhr = new ActiveXObject("Msxml2.XMLHTTP");
+        }catch (e) {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+    else { // XMLHttpRequest non supporté par le navigateur
+        alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest...");
+        xhr = false;
+    }
+    return xhr;
+}
 $(document).ready(function (e) {
     e.preventDefault;
 
@@ -190,3 +207,48 @@ function centerModal() {
     $dialog.css("margin-top", 0);
     $dialog.css("margin-left", 300);
 }
+function deleteEntity(id,url,urlRedirect){
+    bootbox.confirm({
+        buttons: {
+            confirm: {
+                label: 'Supprimer',
+                className: 'btn-success confirm-button-class'
+
+            },
+            cancel: {
+                label: 'Annuler',
+                className: 'cancel-button-class btn-danger '
+            }
+        },
+        message: 'Êtes-vous sûr de vouloir supprimer cet élément ?', callback: function(result) {
+            if(result){
+                onDelete(id,url,urlRedirect);
+            }
+        },
+        title: "Confirmation de suppression"
+    });
+}
+
+
+function onRedirigeVers(urlRedirect){
+    document.location.href=urlRedirect;
+}
+
+function onDelete(id,urlAction,urlRedirect){
+    
+    $.ajax({
+            url: urlAction,
+            type: 'POST',
+            data: 'id='+ id,
+            success: function(data) {
+                console.log(data);
+                onRedirigeVers(urlRedirect);
+            },
+            error: function(resultat, statut, erreur) {
+                console.log(data);
+                return false;
+            }
+    });
+}
+
+
