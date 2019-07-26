@@ -41,5 +41,13 @@ class ControleurProduct {
             echo "Oups! Error when added product.";
         }
     }
+    public function actionDeleteProduct(){
+        $id = $_POST['id'];
+        if($this->m_product->supprimer($id)){
+            echo "Product delete successfully.";
+        } else {
+            echo "Oups! Error when added product.";
+        }
+    }
 
 }

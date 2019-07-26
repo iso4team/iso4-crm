@@ -41,4 +41,15 @@ class ControleurCustomer {
             echo "Error when added customer.";
         }
     }
+    
+    public function actionDeleteCustomer(){
+        $id = $_POST['id'];
+        $conditions = 'cus_fk_user ='.$id;
+        $customer = $this->m_customer->recherche(array('cus_fk_user'=>$id),$conditions);
+        if($this->m_customer->supprimer($customer[0]['id']) && $this->m_user->supprimer($id)){
+            echo "Product delete successfully.";
+        } else {
+            echo "Oups! Error when added product.";
+        }
+    }
 }

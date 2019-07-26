@@ -15,4 +15,5 @@
         <link rel="stylesheet" type="text/css" href="<?= CSS_DIR; ?>style.css" />
         
         <script type="text/javascript" src="<?= JS_DIR; ?>jquery.min.js"></script>
+        <script src="<?= JS_DIR; ?>bootbox.min.js"></script>
     </head>

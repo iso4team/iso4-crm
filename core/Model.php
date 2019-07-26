@@ -37,9 +37,9 @@ class Model {
         return $resultat;
     }
 
-    public function recherche($donnees = array()) {
+    public function recherche($donnees = array(), $conditions = '1=1') {
         $champs = '*';
-        $conditions = '1=1';
+        //$conditions = '1=1';
         $order = 'id DESC';
         $limit = '25';
 

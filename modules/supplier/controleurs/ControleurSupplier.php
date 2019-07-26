@@ -20,6 +20,7 @@ class ControleurSupplier {
         
         $suppliers = $this->m_supplier->findAll();
 
+                                print_r($suppliers);
         include 'list.php';
     }
 
@@ -44,6 +45,18 @@ class ControleurSupplier {
             }
         } else {
             echo "Error when added supplier.";
+        }
+    }
+    
+    public function actionDeleteSupplier(){
+        $id = $_POST['id'];
+        $conditions = 'sup_fk_user ='.$id;
+        $supplier = $this->m_supplier->recherche(array('sup_fk_user'=>$id),$conditions);
+        print_r($supplier);
+        if($this->m_supplier->supprimer($supplier[0]['id']) && $this->m_user->supprimer($id)){
+            echo "Product delete successfully.";
+        } else {
+            echo "Oups! Error when added product.";
         }
     }
 

@@ -12,7 +12,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12 table-responsive">
-                        <table class="table datatable" data-url="products/list">
+                        <table class="table datatable" data-url="orders/list">
                             <thead>
                                 <tr>
                                     <th>Code</th>
@@ -34,7 +34,8 @@
                                         <td><?= $value['order_date'];?></td>
                                         <td><?= $value['ord_statut'];?></td>
                                         <td>
-                                            <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i>
+                                            <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;
+                                            <a href="#"  onclick="deleteEntity(<?php echo $value['id']; ?>,'/iso4-crm/orders/delete','/iso4-crm/orders')"><i class="glyphicon glyphicon-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php
