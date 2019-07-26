@@ -19,8 +19,6 @@ class ControleurSupplier {
         $categories = $this->m_supplier_category->recherche();
         
         $suppliers = $this->m_supplier->findAll();
-
-                                print_r($suppliers);
         include 'list.php';
     }
 
