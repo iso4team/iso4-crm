@@ -1,8 +1,10 @@
 <div class="row">
     <div class="col-md-4">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <span class="fa fa-lg fa-shopping-cart"></span>&nbsp;NOUVELLE LIGNE
+            <div class="panel-heading clearfix">
+                <h4 class="panel-title pull-left">
+                    <span class="fa fa-lg fa-shopping-cart"></span>&nbsp;NOUVELLE LIGNE
+                </h4>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -31,8 +33,10 @@
     </div>
     <div class="col-md-8">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <span class="fa fa-lg fa-cart-arrow-down"></span>&nbsp;LIGNES VENTE
+            <div class="panel-heading clearfix">
+                <h4 class="panel-title pull-left">
+                    <span class="fa fa-lg fa-cart-arrow-down"></span>&nbsp;LIGNES VENTE
+                </h4>
             </div>
             <div class="panel-body" style="overflow: scroll; height:320px;">
                 <table class="table table-hover table-striped table-bordered" id="salesList">

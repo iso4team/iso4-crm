@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mer. 30 oct. 2019 à 12:37
+-- Généré le :  jeu. 02 jan. 2020 à 19:00
 -- Version du serveur :  8.0.16
 -- Version de PHP :  7.1.21
 
@@ -684,7 +684,7 @@ CREATE TABLE `crm_product` (
   `prd_name` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `prd_description` text CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `prd_price` decimal(10,0) NOT NULL,
-  `prd_quantity` int(11) NOT NULL,
+  `prd_quantity` int(11) NOT NULL DEFAULT '0',
   `prd_image` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `prd_category` int(11) NOT NULL,
   `prd_statut` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT '1',
@@ -697,7 +697,7 @@ CREATE TABLE `crm_product` (
 --
 
 INSERT INTO `crm_product` (`id`, `prd_name`, `prd_description`, `prd_price`, `prd_quantity`, `prd_image`, `prd_category`, `prd_statut`, `prd_fk_store_id`) VALUES
-(1, 'product 1', 'testsdsdsd', '10', 0, NULL, 3, '1', NULL);
+(1, 'product 1', 'testsdsdsd', '100', 7, NULL, 3, '1', NULL);
 
 -- --------------------------------------------------------
 
@@ -722,6 +722,66 @@ INSERT INTO `crm_profil` (`idprofil`, `prf_libelle`, `prf_description`, `prf_acc
 (1, 'ADMINISTRATEUR', 'Il a tous les droits sur la plateforme', 1, '2019-07-22 00:00:00', '1'),
 (2, 'Client', 'Son accès à la plateforme dépend de l\'administrateur', 0, '2019-07-22 00:00:00', '1'),
 (3, 'Fournisseur', 'L\'accès à la plateforme dépendra de l\'Administrateur', 0, '2019-07-22 00:00:00', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `crm_sale`
+--
+
+CREATE TABLE `crm_sale` (
+  `id` int(11) NOT NULL,
+  `sa_fk_user` int(11) DEFAULT NULL,
+  `sa_fk_customer` int(11) DEFAULT NULL,
+  `sa_payment_mode` enum('ESPECE','CHEQUE','MOBILE','') CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `sa_payment_ref` varchar(30) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `sa_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `sa_status` enum('PAYEE','NON PAYEE') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT 'NON PAYEE'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+--
+-- Déchargement des données de la table `crm_sale`
+--
+
+INSERT INTO `crm_sale` (`id`, `sa_fk_user`, `sa_fk_customer`, `sa_payment_mode`, `sa_payment_ref`, `sa_status`) VALUES
+(1, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(2, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(3, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(4, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(5, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(6, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(7, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(8, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(9, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(10, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(11, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(12, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(13, NULL, NULL, NULL, NULL, 'NON PAYEE'),
+(14, NULL, NULL, NULL, NULL, 'NON PAYEE');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `crm_sale_item`
+--
+
+CREATE TABLE `crm_sale_item` (
+  `id` int(11) NOT NULL,
+  `si_fk_product` int(11) NOT NULL,
+  `si_fk_sale` int(11) DEFAULT NULL,
+  `si_quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+--
+-- Déchargement des données de la table `crm_sale_item`
+--
+
+INSERT INTO `crm_sale_item` (`id`, `si_fk_product`, `si_fk_sale`, `si_quantity`) VALUES
+(1, 1, 11, 10),
+(2, 1, 12, 1),
+(3, 1, 12, 10),
+(4, 1, 13, 1),
+(5, 1, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -884,6 +944,22 @@ ALTER TABLE `crm_profil`
   ADD PRIMARY KEY (`idprofil`);
 
 --
+-- Index pour la table `crm_sale`
+--
+ALTER TABLE `crm_sale`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_sa_user` (`sa_fk_user`),
+  ADD KEY `idx_sa_customer` (`sa_fk_customer`);
+
+--
+-- Index pour la table `crm_sale_item`
+--
+ALTER TABLE `crm_sale_item`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `si_product` (`si_fk_product`),
+  ADD KEY `si_sale_item` (`si_fk_sale`);
+
+--
 -- Index pour la table `crm_store`
 --
 ALTER TABLE `crm_store`
@@ -974,13 +1050,25 @@ ALTER TABLE `crm_order_product`
 -- AUTO_INCREMENT pour la table `crm_product`
 --
 ALTER TABLE `crm_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `crm_profil`
 --
 ALTER TABLE `crm_profil`
   MODIFY `idprofil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `crm_sale`
+--
+ALTER TABLE `crm_sale`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT pour la table `crm_sale_item`
+--
+ALTER TABLE `crm_sale_item`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `crm_store`

@@ -58,7 +58,7 @@ class ControleurSale {
         $pd = $this->m_product->findProductById($id);
 
         if ($pd->prd_quantity < $qt) {
-            exit(json_decode(array("code" => "111", "message" => "Stock insuffisant.")));
+            exit(json_encode(array("code" => "111", "message" => "Stock insuffisant.")));
         }
 
         $idSl = intval($_REQUEST['sale_id']);

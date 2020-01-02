@@ -1,7 +1,6 @@
-configs/config.php
-configs/params.php
-configs/params_dev.php
-cache/*
-web/upload/*
-nbproject/
-/logs/
+configs
+cache
+web/upload
+nbproject
+logs
+libs

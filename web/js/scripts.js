@@ -52,7 +52,7 @@ $(document).ready(function (e) {
             console.log("idVente = " + idVente);
         }
 
-        if (idVente !== 0) {
+        if (idVente != 0) {
             var row = "";
             row = "<tr>";
             row += "<td>" + product.prd_name + "</td>";
