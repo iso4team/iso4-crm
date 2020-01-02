@@ -47,18 +47,3 @@ $autoloader->addDirectory('libs')
         ->addDirectory('modeles');
 spl_autoload_register(array($autoloader, 'autoload'));
 
-require_once 'libs/autoload.php';
-
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-
-$logger = new Logger("logs");
-
-// Declare a new handler and store it in the $logstream variable
-// This handler will be triggered by events of log level INFO and above
-$logstream = new StreamHandler('/var/log/monolog/php.log', Logger::DEBUG);
-
-// Push the $logstream handler onto the Logger object
-$logger->pushHandler($logstream);
-
-$logger->debug('premier message dans les logs.');

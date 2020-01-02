@@ -54,7 +54,7 @@ $(document).ready(function (e) {
 
         if (result.code == '000') {
             var row = "";
-            row = "<tr>";
+            row = "<tr id='" + result.sale_item_id + "'>";
             row += "<td>" + product.prd_name + "</td>";
             row += "<td>" + quantite + "</td>";
             row += "<td>" + product.prd_price + "</td>";
@@ -62,13 +62,24 @@ $(document).ready(function (e) {
             row += "</tr>";
 
             $("#salesList").find('tbody').append(row);
+            $("#count").empty().append(result.total);
+            $("#total").empty().append(result.montant);
         } else {
             alert(result.message);
         }
     });
 
     $(document).on('click', '.deleteSaleItem', function (e) {
-        $(this).closest('tr').remove();
+        var line = $(this).closest('tr');
+        //alert(line.attr('id'));
+        var result = $.sendAjaxPOSTRequest(baseUrl + '/sales/item/'+line.attr('id')+'/delete');
+        
+        line.remove();
+    });
+
+    $('#validateSale').on('shown.bs.modal', function (e) {
+        $("input[type='hidden'][name='saleId']").val($("#idVente").val());
+        $("#saleRecap").empty().append('Vente de ' + $("#count").html() + ' articles a ' + $("#total").html());
     });
 
 });

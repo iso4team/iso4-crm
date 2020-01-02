@@ -61,12 +61,14 @@
                         </div>
                     </div>
                     <div class="col-md-4 pull-right">
-                        <button type="button" class="btn btn-lg btn-block btn-primary">Valider</button>
+                        <a class="btn btn-lg btn-block btn-primary" href="#" data-toggle="modal" data-target="#validateSale">Valider</a>
+                        <!--button type="button" class="btn btn-lg btn-block btn-primary">Valider</button-->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<?php 
+include_once 'validate.php';
 

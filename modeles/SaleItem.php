@@ -30,4 +30,13 @@ class SaleItem extends Model {
         return (!empty($res)) ? $res[0] : array();
     }
 
+    public function getInfosVente($id) {
+        $sql = "SELECT sum(prd_price*si_quantity) montant, sum(si_quantity) total ";
+        $sql .="FROM crm_sale_item s ";
+        $sql .= "JOIN crm_product p ON s.si_fk_product = p.id ";
+        $sql .= "WHERE s.si_fk_sale = ".$id;
+        error_log($sql);
+        $res = $this->executerReq($sql);
+        return (!empty($res)) ? $res[0] : array();
+    }
 }

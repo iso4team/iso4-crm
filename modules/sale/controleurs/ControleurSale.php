@@ -68,12 +68,21 @@ class ControleurSale {
         }
 
         $sale_item = array('si_fk_product' => $id, 'si_fk_sale' => $idSl, 'si_quantity' => $qt);
-        $this->m_sale_item->ajouter($sale_item);
+        $sale_item_id = $this->m_sale_item->ajouter($sale_item, TRUE);
 
         $this->m_product->modifier(array("id" => $id, "prd_quantity" => ($pd->prd_quantity - $qt)));
 
-        $rs = array("code" => "000", "message" => "SUCCESS", "sale_id" => $idSl, "product" => $pd);
+        $rs = array("code" => "000", "message" => "SUCCESS", "sale_id" => $idSl, "product" => $pd, "sale_item_id"=>$sale_item_id);
+        $in = $this->m_sale_item->getInfosVente($idSl);
+        if (!empty($in)) {
+            $rs["total"] = $in->total;
+            $rs["montant"] = $in->montant;
+        }
+
         echo json_encode($rs);
     }
 
+    public function deleteSaleItem($id) {
+    
+    }
 }
