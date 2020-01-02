@@ -29,4 +29,17 @@ class Product extends Model {
         return $this->executerReq($sql);
     }
 
+    public function search($name) {
+        $sql = "SELECT id, prd_name, prd_description "
+                . " FROM crm_product "
+                . " WHERE prd_name LIKE '%$name%'"
+                . " OR prd_description LIKE '%$name%'";
+        return $this->executerReq($sql);
+    }
+
+    public function findProductById($id) {
+        $res = $this->recherche(array("conditions" => "id = " . $id));
+        return (!empty($res)) ? $res[0] : array();
+    }
+
 }

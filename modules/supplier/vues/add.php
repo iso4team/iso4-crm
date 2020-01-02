@@ -42,7 +42,7 @@
                                         <?php
                                         foreach ($countries as $value) {
                                             ?>
-                                            <option value="<?= $value['id']; ?>"><?= $value['cnt_libelle']; ?></option>
+                                            <option value="<?= $value->id; ?>"><?= $value->cnt_libelle; ?></option>
                                             <?php
                                         }
                                         ?>
@@ -50,20 +50,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label for="category"> Category </label>
                                     <select class="form-control select-search" name="category">
                                         <option value="">Choose a category</option>
                                         <?php
                                         foreach ($categories as $value) {
                                             ?>
-                                            <option value="<?= $value['id']; ?>"><?= $value['ca_libelle']; ?></option>
+                                            <option value="<?= $value->id; ?>"><?= $value->ca_libelle; ?></option>
                                             <?php
                                         }
                                         ?>
                                     </select>
                                 </div>
-                                <div class="col-md-6">
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
                                     <label for="address"> Address </label>
                                     <textarea name="address" id="address" class="form-control" rows="5" required></textarea>
                                 </div>

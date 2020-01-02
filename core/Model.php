@@ -62,7 +62,7 @@ class Model {
         $resultat = array();
         $execution = $this->db->query($req);
         if ($execution) {
-            while ($res = $execution->fetch()) {
+            while ($res = $execution->fetch(PDO::FETCH_OBJ)) {
                 $resultat[] = $res;
             }
         } else {
@@ -142,7 +142,7 @@ class Model {
         $resultat = array();
         $execution = $this->db->query($sql);
         if ($execution) {
-            while ($res = $execution->fetch()) {
+            while ($res = $execution->fetch(PDO::FETCH_OBJ)) {
                 $resultat[] = $res;
             }
         } else {

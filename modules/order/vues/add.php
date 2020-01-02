@@ -18,7 +18,7 @@
                                         <?php
                                         foreach ($suppliers as $value) {
                                             ?>
-                                            <option value="<?= $value['id']; ?>"><?= $value['usr_first_name'].' '.$value['usr_last_name']; ?></option>
+                                            <option value="<?= $value->id; ?>"><?= $value->usr_first_name.' '.$value->usr_last_name; ?></option>
                                             <?php
                                         }
                                         ?>
@@ -33,7 +33,7 @@
                                         <?php
                                         foreach ($products as $value) {
                                             ?>
-                                            <option value="<?= $value['id']; ?>"><?= $value['prd_name']; ?></option>
+                                            <option value="<?= $value->id; ?>"><?= $value->prd_name; ?></option>
                                             <?php
                                         }
                                         ?>

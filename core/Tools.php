@@ -23,8 +23,8 @@ class Tools {
 
     public static function loadFile($name, $file_name) {
 
-        $target_file = ROOT . "web/upload/".$file_name . "_" . basename($_FILES[$name]["name"]);
-        $fileMimeTyp = pathinfo($target_file, PATHINFO_EXTENSION);
+        $fileMimeTyp = pathinfo(basename($_FILES[$name]["name"]), PATHINFO_EXTENSION);
+        $target_file = ROOT . "web/upload/".$file_name . "." . $fileMimeTyp;
 
         // Check if file already exists
         if (file_exists($target_file)) {
@@ -40,7 +40,7 @@ class Tools {
         }
         // Check if $uploadOk is set to 0 by an error
         if (move_uploaded_file($_FILES[$name]["tmp_name"], $target_file)) {
-            return "0;" . $file_name . "_" . basename($_FILES[$name]["name"]);
+            return "0;" . $file_name . "." . $fileMimeTyp;
         } else {
             return "1;Désolé. Erreur lors du chargement.";
         }

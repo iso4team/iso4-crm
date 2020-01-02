@@ -27,15 +27,15 @@
                                 foreach ($products as $value) {
                                     ?>
                                     <tr>
-                                        <td><?= $value->prd_name;?></td>
-                                        <td><?= $value->prd_price;?> $</td>
-                                        <td><?= $value->category;?></td>
+                                        <td><?= $value['prd_name'];?></td>
+                                        <td><?= $value['prd_price'];?> $</td>
+                                        <td><?= $value['category'];?></td>
                                         <td>10</td>
-                                        <td><?= (isset($value->store)) ? $value->store : "N/A";?></td>
+                                        <td><?= (isset($value['store'])) ? $value['store'] : "N/A";?></td>
                                         <td>
-                                            <a href="#"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;</a> 
-                                            <a href="#"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;</a>
-                                            <a href="#" onclick="deleteEntity(<?php echo $value->id; ?>,'/iso4-crm/products/delete','/iso4-crm/products')"><i class="glyphicon glyphicon-trash"></i></a>
+                                            <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp; 
+                                            <i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;
+                                            <a href="#"  onclick="deleteEntity(<?php echo $value['id']; ?>,'/iso4-crm/products/delete','/iso4-crm/products')"><i class="glyphicon glyphicon-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php

@@ -42,7 +42,7 @@
                                         <?php
                                         foreach ($countries as $value) {
                                             ?>
-                                            <option value="<?= $value['id']; ?>"><?= $value['cnt_libelle']; ?></option>
+                                            <option value="<?= $value->id; ?>"><?= $value->cnt_libelle; ?></option>
                                             <?php
                                         }
                                         ?>

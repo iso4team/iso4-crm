@@ -18,7 +18,7 @@
                                         <?php
                                         foreach ($orders as $value) {
                                             ?>
-                                            <option value="<?= $value['op_id']; ?>"><?= "(".$value['op_quantite'].") ".$value['prd_name']; ?></option>
+                                            <option value="<?= $value->op_id; ?>"><?= "(".$value->op_quantite.") ".$value->prd_name; ?></option>
                                             <?php
                                         }
                                         ?>

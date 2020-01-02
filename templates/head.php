@@ -12,8 +12,7 @@
         <link rel="stylesheet" type="text/css"  href="<?= JS_DIR; ?>multiselect/css/multi-select.css"/>
         
         <link rel="stylesheet" type="text/css" href="<?= CSS_DIR; ?>datatables/plugins/css/dataTables.checkboxes.css"/>
-        <link rel="stylesheet" type="text/css" href="<?= CSS_DIR; ?>style.css" />
+        <link rel="stylesheet" type="text/css" href="<?= CSS_DIR; ?>datatables/plugins/css/dataTables.bootstrap.min.css"/>
         
-        <script type="text/javascript" src="<?= JS_DIR; ?>jquery.min.js"></script>
-        <script src="<?= JS_DIR; ?>bootbox.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?= CSS_DIR; ?>style.css" />
     </head>

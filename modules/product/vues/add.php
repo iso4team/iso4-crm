@@ -28,7 +28,7 @@
                                         <?php
                                         foreach ($categories as $value) {
                                             ?>
-                                            <option value="<?= $value['id']; ?>"><?= $value['ca_libelle']; ?></option>
+                                            <option value="<?= $value->id; ?>"><?= $value->ca_libelle; ?></option>
                                             <?php
                                         }
                                         ?>

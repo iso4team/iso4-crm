@@ -3,6 +3,6 @@
         "vendor-dir": "libs"
     },
     "require": {
-        "twig/twig":"~2.0"
+        "monolog/monolog": "^1.25"
     }
 }

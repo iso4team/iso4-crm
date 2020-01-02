@@ -1,4 +1,3 @@
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
         <div class="panel-heading clearfix" role="tab" id="headingOne">
             <h4 class="panel-title pull-left">
@@ -28,14 +27,14 @@
                                 foreach ($orders as $value) {
                                     ?>
                                     <tr>
-                                        <td><?= $value['id'];?></td>
-                                        <td><?= $value['prd_name'];?></td>
-                                        <td><?= $value['op_quantite'];?></td>
-                                        <td><?= $value['order_date'];?></td>
-                                        <td><?= $value['ord_statut'];?></td>
+                                        <td><?= $value->id;?></td>
+                                        <td><?= $value->prd_name;?></td>
+                                        <td><?= $value->op_quantite;?></td>
+                                        <td><?= $value->order_date;?></td>
+                                        <td><?= $value->ord_statut;?></td>
                                         <td>
                                             <i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;
-                                            <a href="#"  onclick="deleteEntity(<?php echo $value['id']; ?>,'/iso4-crm/orders/delete','/iso4-crm/orders')"><i class="glyphicon glyphicon-trash"></i></a>
+                                            <a href="#"  onclick="deleteEntity(<?php echo $value->id; ?>,'/iso4-crm/orders/delete','/iso4-crm/orders')"><i class="glyphicon glyphicon-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -58,6 +57,5 @@
             </div>
         </div>
     </div>
-</div>
 <?php
 include_once 'add.php';

@@ -16,7 +16,9 @@ $(document).ready(function (e) {
 
     $('.datatable tfoot th').each(function () {//  ajout filtres recherches par colonne
         var title = $(this).text();
-        $(this).html('<input type="text" placeholder=" ' + title + '" />');
+        if (title) {
+            $(this).html('<input type="text" class="form-control" placeholder=" ' + title + '" />');
+        }
     });
     $(".datatable").DataTable({
         /*"ajax": {
@@ -31,6 +33,42 @@ $(document).ready(function (e) {
         $("input", this.header()).on("keyup change", function () {
             b.search() !== this.value && b.search(this.value).draw();
         });
+    });
+
+    // - Ajout d'une ligne de vente
+    $("#addSale").on("click", function () {
+        var article = $("#article").val();
+        var quantite = $("#quantite").val();
+        var idVente = $("#idVente").val();
+
+        var result = $.sendAjaxPOSTRequest(baseUrl + 'sales/item/add?article=' + article + "&quantite=" + quantite + "&sale_id=" + idVente);
+        console.log(result);
+        var product = result.product;
+        console.log(product);
+
+        if ((idVente == 0) && (result.code == '000')) {
+            idVente = result.sale_id;
+            $("#idVente").val(idVente);
+            console.log("idVente = " + idVente);
+        }
+
+        if (idVente !== 0) {
+            var row = "";
+            row = "<tr>";
+            row += "<td>" + product.prd_name + "</td>";
+            row += "<td>" + quantite + "</td>";
+            row += "<td>" + product.prd_price + "</td>";
+            row += "<td><a href='#'><i class='glyphicon glyphicon-trash deleteSaleItem'></i></a></td>";
+            row += "</tr>";
+
+            $("#salesList").find('tbody').append(row);
+        } else {
+            alert(result.message);
+        }
+    });
+
+    $(document).on('click', '.deleteSaleItem', function (e) {
+        $(this).closest('tr').remove();
     });
 
 });

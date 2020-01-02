@@ -1,24 +1,25 @@
 <?php
 
-class ControleurProduct {
+class ControleurSale {
 
     protected $m_product;
     protected $m_category;
+    protected $m_sale;
+    protected $m_sale_item;
 
     public function __construct() {
         $this->m_product = new Product();
+        $this->m_sale = new Sale();
+        $this->m_sale_item = new SaleItem();
         $this->m_category = new ProductCategory();
     }
 
     public function actionIndex() {
-        $categories = $this->m_category->recherche();
-
         $products = $this->m_product->findAll();
-
-        include 'list.php';
+        include 'add.php';
     }
 
-    public function actionAddProduct() {
+    public function actionAdd() {
         $data = filter_input_array(INPUT_POST);
 
         $input = array();
@@ -41,9 +42,8 @@ class ControleurProduct {
         }
     }
 
-    public function actionDeleteProduct() {
-        $dt = filter_input_array(INPUT_POST);
-        $id = $dt['id'];
+    public function actionDelete($id) {
+        $id = $_POST['id'];
         if ($this->m_product->supprimer($id)) {
             echo "Product delete successfully.";
         } else {
@@ -51,17 +51,29 @@ class ControleurProduct {
         }
     }
 
-    public function searchProduct() {
-        $data = filter_input_array(INPUT_GET);
-        $temp = $this->m_product->search($data['q']);
-        $resp = array();
-        foreach ($temp as $value) {
-            $resp[] = $value['prd_name'];
+    public function addSaleItem() {
+        $id = $_REQUEST['article'];
+        $qt = intval($_REQUEST['quantite']);
+
+        $pd = $this->m_product->findProductById($id);
+
+        if ($pd->prd_quantity < $qt) {
+            exit(json_decode(array("code" => "111", "message" => "Stock insuffisant.")));
         }
-        echo json_encode($resp);
+
+        $idSl = intval($_REQUEST['sale_id']);
+        if ($idSl == 0) {
+            $sale = array('sa_status' => 'NON PAYEE');
+            $idSl = $this->m_sale->ajouter($sale, TRUE);
+        }
+
+        $sale_item = array('si_fk_product' => $id, 'si_fk_sale' => $idSl, 'si_quantity' => $qt);
+        $this->m_sale_item->ajouter($sale_item);
+
+        $this->m_product->modifier(array("id" => $id, "prd_quantity" => ($pd->prd_quantity - $qt)));
+
+        $rs = array("code" => "000", "message" => "SUCCESS", "sale_id" => $idSl, "product" => $pd);
+        echo json_encode($rs);
     }
 
-    public function detailsProduct($id) {
-        echo json_encode($this->m_product->findProductById($id));
-    }
 }

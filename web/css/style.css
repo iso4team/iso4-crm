@@ -17,8 +17,10 @@
 }
 
 body{
-    font-family: 'Daxlight';
+    font: 14px 'Daxlight';
+    background-color: #f0f1f1;
 }
+
 .btn, input[type=text], input[type=password], .navbar{
     border-radius: 0;
 }
@@ -33,7 +35,7 @@ body{
 }
 
 .ligne1{
-    background-color: #303030;
+    background-color: #2e84c4;
 }
 
 .ligne2 img{
@@ -49,7 +51,7 @@ body{
 }
 
 .bienvenu{
-    color: #7F7F7F;
+    color: #FFFFFF;
     font-weight: bold;
     font-family: "Daxlight";
     font-size: 11px;
@@ -63,7 +65,7 @@ body{
 }
 
 .col2{
-    color: #D0D2D2;
+    color: #FFFFFF;
     font-weight: bold;
     font-family: "Daxlight";
     font-size: 11px;
@@ -143,7 +145,7 @@ body{
 }
 
 
-table td{
+table {
     font: 14px "Daxlight";
 }
 
@@ -211,6 +213,8 @@ table .menu .defaut, .defaut .panel-heading{
 }
 
 .panel-group .panel{
+    padding: 5px;
+    border-radius: 0;
 }
 
 table .menu .dashboard, .dashboard .dash, .vertical-menu a.active{
@@ -257,9 +261,11 @@ table .menu td a:hover{
 .contenu{
     margin-top: 1%;
 }
+
 .navbar{
     margin-bottom: 10px;
 }
+
 .thumbnail img{
     width: 55px;
     height: 55px;
@@ -448,4 +454,38 @@ ul.nav-tabs li.active a{
     border-radius: 0 0 4px 4px;
     -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 0 1px 1px rgba(0,0,0,.05)
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #2e84c4;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #2e84c4;
+    border-color: #2e84c4;
+}
+
+#sale-resume-text{
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.panel {
+  border-radius:0px;
+}
+.panel .panel-heading {
+  font-size:14px;
+  text-transform:uppercase;
+  margin: 5px;
+  padding: 5px;
+  background-color: #ffffff;
+}
+
+.panel .panel-heading h4{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-weight: normal;
 }

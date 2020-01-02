@@ -4,8 +4,8 @@ mb_internal_encoding('UTF-8');
 if (($_SERVER['SERVER_ADDR'] == 'localhost') || ($_SERVER['SERVER_ADDR'] == '127.0.0.1') || ($_SERVER['SERVER_ADDR'] == '::1')) {
     require_once 'params_dev.php';
     define('APP_NAME', '/iso4-crm');
-    //define('ROOT', '/Library/WebServer/Documents/iso4-crm/');
-    define('ROOT', 'C:\laragon\www\iso4-crm/');
+    define('ROOT', '/Library/WebServer/Documents/iso4-crm/');
+    //define('ROOT', 'C:\laragon\www\iso4-crm/');
 } else {
     require_once 'params.php';
     define('APP_NAME', '/iso4-crm');
@@ -24,6 +24,7 @@ define('HTML_DIR', ROOT . 'templates/');
 define('BASE_DIR', 'web/');
 define('FILE_DIR', APP_NAME . '/web/upload/');
 define('BASE_PATH', ROOT . '/web/index.php');
+
 
 // - Transformer toutes les erreurs en ErrorException
 /* set_error_handler(function($errno, $errstr, $errfile, $errline) {
@@ -46,3 +47,18 @@ $autoloader->addDirectory('libs')
         ->addDirectory('modeles');
 spl_autoload_register(array($autoloader, 'autoload'));
 
+require_once 'libs/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+$logger = new Logger("logs");
+
+// Declare a new handler and store it in the $logstream variable
+// This handler will be triggered by events of log level INFO and above
+$logstream = new StreamHandler('/var/log/monolog/php.log', Logger::DEBUG);
+
+// Push the $logstream handler onto the Logger object
+$logger->pushHandler($logstream);
+
+$logger->debug('premier message dans les logs.');
