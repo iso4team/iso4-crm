@@ -4,7 +4,7 @@ mb_internal_encoding('UTF-8');
 if (($_SERVER['SERVER_ADDR'] == 'localhost') || ($_SERVER['SERVER_ADDR'] == '127.0.0.1') || ($_SERVER['SERVER_ADDR'] == '::1')) {
     require_once 'params_dev.php';
     define('APP_NAME', '/iso4-crm');
-    define('ROOT', '/Library/WebServer/Documents/iso4-crm/');
+    define('ROOT', '/home/ibrahima/Documents/www/iso4-crm/');
     //define('ROOT', 'C:\laragon\www\iso4-crm/');
 } else {
     require_once 'params.php';
